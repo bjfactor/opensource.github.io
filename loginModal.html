@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/loginModal.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <!-- login for modal button -->
+    <button type="button" class="navbar btn btn-primary m-5 px-5" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+
+    <!-- Modal -->
+    <div class="modal fade" data-bs-backdrop="static" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header m-0 border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3 class="modalHeader text-center fw-bold">Welcome Back!</h3>
+                    <form>
+                        <div class="mb-3">
+                            <input type="email" class="form-control mt-5" name="username" id="username" aria-describedby="emailHelp" placeholder="Email Address">
+                            <div id="emailHelp" class="form-text mb-3 ms-2">We'll never share your email with anyone else.</div>
+                            <input type="password" class="form-control mb-3" name="password" id="password" placeholder="Password">
+                            <input onclick="loginSuccess()" data-bs-target="#mnemonicModal" type="button" id="login" class="w-100 btn btn-primary" value="Continue with email">
+                        </div>
+                        <p class="text-center">- or -</p>
+                        <div class="googleButton mb-3">
+                            <div id="g_id_onload" data_client_id="YOUR_GOOGLE_CLIENT_ID" data-login-uri="https://your.domain/your_login_endpoint" data-auto_prompt="false">                    
+                            </div>
+                            <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left">
+                            </div>
+                        </div>
+                        <div>
+                            <p class="lead my-4 text-center fs-6">———— Dont't have Origin account? ————</p>
+                            <button type="button" class="btn btn-light border border-dark mb-5 w-100" href="#">Sign up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
